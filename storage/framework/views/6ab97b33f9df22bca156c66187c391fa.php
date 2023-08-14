@@ -50,20 +50,20 @@
             <label for="afiliado">Afiliado do produto</label>
             
             <select class="file-input file-input-bordered w-full" placeholder="" name="afiliado">
-            <?php $__currentLoopData = $afiliado; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $afiliado): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            
             <option value="<?php echo e($afiliado->nome); ?>">
             </option>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            
             </select>
 
         </div>
         <div class="grid w-full">
             <label for="produtor">Produtor do produto</label>
             <select class="file-input file-input-bordered w-full" placeholder="" name="produtor">
-            <?php $__currentLoopData = $produtores; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produtor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            
             <option value="<?php echo e($produtor->nome); ?>">
             </option>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            
             </select>
         </div>
 

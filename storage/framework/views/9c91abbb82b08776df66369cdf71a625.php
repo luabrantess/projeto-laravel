@@ -11,7 +11,7 @@
 <body>
 <div class="navbar bg-gray-100">
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">Loja</a>
+    <a class="btn btn-ghost normal-case text-xl" href="/">Loja</a>
   </div>
   <div class="flex-none">
     <div class="dropdown dropdown-end">
@@ -47,25 +47,39 @@
   </div>
 </div>
 
-<?php $__currentLoopData = $produtos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-<form action="<?php echo e(route('vendas.store')); ?>" enctype="multipart/form-data" method="POST">
+
+<div class="flex">
+<form action="<?php echo e(route('venda.store')); ?>" enctype="multipart/form-data" method="POST">
         <?php echo csrf_field(); ?>
 
-<div class="card w-96 bg-base-100 shadow-xl m-5">
-  <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title"><?php echo e($produto->nome); ?></h2>
-    <p><?php echo e($produto->$descricao); ?></p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary" type="submit">Compre agora</button>
-    </div>
-  </div>
-</div>
+      <div class="card w-96 bg-base-100 shadow-xl m-5">
+        <figure><?php echo e($produto->foto); ?></figure>
+        <div class="card-body">
+          <h2 class="card-title"><?php echo e($produto->nome); ?></h2>
+          <p><?php echo e($produto->descricao); ?></p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary" type="submit">Compre agora</button>
+          </div>
+        </div>
+      </div>
 
 </form>
 
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-  
+      <div class="card w-96 bg-base-100 shadow-xl m-5">
+        <figure>
+          <img src="https://moveislinhares.vteximg.com.br/arquivos/ids/214642-1000-1000/Fone-de-ouvido-JBL-TUNE510-com-Bluetooth-na-cor-Azul-1.jpg?v=638000527607370000"/>
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Nome do produto</h2>
+          <p>Descrição do produto</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary" type="submit">Compre agora</button>
+          </div>
+        </div>
+      </div>
+
+</div>
+
 </body>
 </html><?php /**PATH C:\Users\LENOVO\Desktop\prova\e-commerce\resources\views/vendas/index.blade.php ENDPATH**/ ?>

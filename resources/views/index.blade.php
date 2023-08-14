@@ -12,7 +12,7 @@
 
     <div class="navbar bg-gray-100">
       <div class="navbar-start">
-        <a class="btn btn-ghost normal-case text-xl">E-commerce</a>
+        <a class="btn btn-ghost normal-case text-xl" href="/vendas">E-commerce</a>
       </div>
       <div class="navbar-end">
         <a class="btn" href="{{ route('produto.create')}}">Adicionar produto</a>
@@ -35,8 +35,10 @@
       </tr>
     </thead>
     <tbody>
+
+    
       <!-- row 1 -->
-      @foreach ($produtos as $produto)
+      @foreach ($produto as $prod)
 
       <tr>
         <th>
@@ -48,20 +50,20 @@
           <div class="flex items-center space-x-3">
             <div class="avatar">
               <div class="mask mask-squircle w-12 h-12">
-                <img>{{ $produto->foto }}<img/>
+                <img>{{ $prod->foto }}<img/>
               </div>
             </div>
             <div>
-              <div class="font-bold">{{ $produto->nome }}</div>
+              <div class="font-bold">{{ $prod->nome }}</div>
             </div>
           </div>
         </td>
         <td>
-          {{$produto->descricao}}
+          {{$prod->descricao}}
           <br/>
           
         </td>
-        <td>{{$produto->valor}}</td>
+        <td>{{$prod->valor}}</td>
         <th>
           <a class="btn btn-ghost btn-xs" href=" route('produto.edit', $produto->id)">Editar</a>
         </th>

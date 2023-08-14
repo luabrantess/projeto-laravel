@@ -14,12 +14,12 @@ class ProdutoController extends Controller
     public function index(Afiliado $afiliado, Produtor $produtor)
     {
         $produto = Produto::get();
-        return view('index', ['produto' => $produto]);
+        return view('index', ['produto' => $produto], ['afiliado' => $afiliado], ['produtor' => $produtor]);
     }
 
     public function create(Afiliado $afiliado, Produtor $produtor)
     {
-        return view('create');
+        return view('create', ['afiliado' => $afiliado], ['produtor' => $produtor]);
     }
 
     public function edit(Produto $produto, Afiliado $afiliado, Produtor $produtor)
@@ -44,7 +44,7 @@ class ProdutoController extends Controller
             'descricao' => 'required',
             'valor' => 'required',
             'afiliado' => '',
-            'produtores' => 'required',
+            'produtor' => '',
             'foto' => [File::types(['png'])],
         
         ]);

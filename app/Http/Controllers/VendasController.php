@@ -14,8 +14,8 @@ class VendasController extends Controller
     public function index(Produto $produto, Afiliado $afiliado, Produtor $produtor)
     {
         //$vendas = Vendas::get();
-        return view('vendas/index'//, ['vendas' => $vendas]);
-    );
+        return view('vendas/index', ['produto' => $produto], ['afiliado' => $afiliado], ['produtor' => $produtor]);
+    
     }
     public function store(Request $request, Produto $produto, Afiliado $afiliado, Produtor $produtor) {
 

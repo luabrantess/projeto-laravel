@@ -50,20 +50,20 @@
             <label for="afiliado">Afiliado do produto</label>
             
             <select class="file-input file-input-bordered w-full" placeholder="" name="afiliado">
-            @foreach ($afiliados as $afiliado)
+            
             <option value="{{ $afiliado->nome}}">
             </option>
-            @endforeach
+            
             </select>
 
         </div>
         <div class="grid w-full">
             <label for="produtor">Produtor do produto</label>
             <select class="file-input file-input-bordered w-full" placeholder="" name="produtor">
-            @foreach ($produtores as $produtor)
+            
             <option value="{{ $produtor->nome}}">
             </option>
-            @endforeach
+            
             </select>
         </div>
 

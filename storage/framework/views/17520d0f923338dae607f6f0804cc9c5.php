@@ -10,9 +10,9 @@
     </head>
     <body class="antialiased">
 
-    <div class="navbar bg-base-100">
+    <div class="navbar bg-gray-100">
       <div class="navbar-start">
-        <a class="btn btn-ghost normal-case text-xl">E-commerce</a>
+        <a class="btn btn-ghost normal-case text-xl" href="/vendas">E-commerce</a>
       </div>
       <div class="navbar-end">
         <a class="btn" href="<?php echo e(route('produto.create')); ?>">Adicionar produto</a>
@@ -35,8 +35,10 @@
       </tr>
     </thead>
     <tbody>
+
+    
       <!-- row 1 -->
-      <?php $__currentLoopData = $produtos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <?php $__currentLoopData = $produto; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $prod): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
       <tr>
         <th>
@@ -48,23 +50,23 @@
           <div class="flex items-center space-x-3">
             <div class="avatar">
               <div class="mask mask-squircle w-12 h-12">
-                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+                <img><?php echo e($prod->foto); ?><img/>
               </div>
             </div>
             <div>
-              <div class="font-bold"><?php echo e($produto->nome); ?></div>
-              <div class="text-sm opacity-50">United States</div>
+              <div class="font-bold"><?php echo e($prod->nome); ?></div>
             </div>
           </div>
         </td>
         <td>
-          Zemlak, Daniel and Leannon
+          <?php echo e($prod->descricao); ?>
+
           <br/>
-          <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
+          
         </td>
-        <td>Purple</td>
+        <td><?php echo e($prod->valor); ?></td>
         <th>
-          <button class="btn btn-ghost btn-xs">Editar</button>
+          <a class="btn btn-ghost btn-xs" href=" route('produto.edit', $produto->id)">Editar</a>
         </th>
       </tr>
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

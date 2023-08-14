@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Produto extends Model
 {
     protected $fillable = ['vendas_valor'];
+    protected $table = 'produto';
 
     use HasFactory;
 

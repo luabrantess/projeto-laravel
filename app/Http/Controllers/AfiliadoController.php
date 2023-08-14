@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Afiliado;
+use App\Models\Produto;
 use App\Models\Vendas;
 use Illuminate\Http\Request;
 
 class AfiliadoController extends Controller
 {
-    public function store(Request $request, Afiliado $afiliado, Vendas $vendas) {
+    public function store(Request $request, Afiliado $afiliado, Vendas $vendas, Produto $produto) {
 
         $validated = $request->validate([
             'nome' => 'required|min:5|max:255',

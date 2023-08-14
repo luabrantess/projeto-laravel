@@ -11,7 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('produto', function (Blueprint $table) {
+            $table->id();
+            $table->binary('foto');
+            $table->foreignId('afiliado')->constrained('afiliado')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('produtor')->constrained('produtor')->onDelete('cascade')->onUpdate('cascade');
+            $table->char('nome');
+            $table->text('descricao');
+            $table->float('valor');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        
     }
 };
